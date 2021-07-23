@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid Layout</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .container {
+            width: 100vw;
+            height: 100vh;
+
+            font-weight: bold;
+            font-size: 20px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 50px 1fr 1fr 100px;
+            gap: 10px;
+
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .container div {
+            padding: 10px;
+            border: 2px solid black;
+        }
+
+        .header {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            background-color: #0CECDD;
+        }
+
+        .content-large {
+            grid-row-start: 2;
+            grid-row-end: span 2;
+            grid-column-start: 1;
+            grid-column-end: span 2;
+            background-color: #FFF338;
+        }
+
+        .content-small {
+            background-color: #FF67E7
+        }
+
+        .footer {
+            grid-column: 1/ span 3;
+            background-color: #C400FF;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="content-large">Content #1</div>
+        <div class="content-small">Content #2</div>
+        <div class="content-small">Content #3</div>
+        <div class="footer">Footer</div>
+    </div>
+</body>
+</html>
